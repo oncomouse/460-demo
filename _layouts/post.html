@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<article class="article">
+  <header class="article__header">
+    <h1 class="article__title">{{ page.title }}</h1>
+    {% if post %}
+    {% assign categories = post.categories %}
+    {% else %}
+    {% assign categories = page.categories %}
+    {% endif %}
+    <ul class="article__info">
+      {% if categories.size > 0%}<li class="article__info-item"><strong>Posted In</strong>: {{categories | join: ', ' | capitalize }}</li>{%endif%}
+      <li class="article__info-item"><strong>Posted On</strong>: <time>{{ page.date | date: '%Y-%m-%d' }}</time></li>
+      <li class="article__info-item"><strong>Posted By</strong>: {% if page.author %}{{ page.author }}{%else%}@oncomouse{%endif%}</li>
+    </ul>
+  </header>
+  <main class="article__body">
+    {{ page.content }}
+  </main>
+</article>

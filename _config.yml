@@ -6,7 +6,7 @@
 title: 460 Demo Blog
 # Short bio or description (displayed in the header)
 description: Demonstration Site for ENGL 460
-
+permalink: /:year/:month/:day/:title:output_ext
 #
 # !! DON'T EDIT BELOW THIS MESSAGE
 #
