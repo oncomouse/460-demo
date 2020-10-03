@@ -1,0 +1,31 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.navigation_list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.navigation_list-item {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.navigation_list-item:first-child {
+    margin-left: 0;
+}
+
+.navigation_list-item a {
+    background: #0F79D0;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    border-radius: 15px;
+}
+
+.navigation_list-item a:hover {
+    background: orange;
+    text-decoration: none;
+}
