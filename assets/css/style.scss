@@ -1,0 +1,26 @@
+---
+---
+@import "{{ site.theme }}";
+
+.navigation_list {
+    list-style: none;
+    padding: 0;
+}
+
+.navigation_list-item {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.navigation_list-item a {
+    padding: 10px;
+    background: #0F79D0;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+.navigation_list-item a:hover {
+    background-color: rgb(245, 170, 32);
+    text-decoration: none;
+}
