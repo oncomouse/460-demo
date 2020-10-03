@@ -24,3 +24,4 @@ exclude:
   - CNAME
 
 # Look at me, ma! I'm also a clone!
+theme: jekyll-theme-slate
