@@ -1,0 +1,12 @@
+{% unless include.short %}
+{% if post %}
+{% assign categories = post.categories %}
+{% else %}
+{% assign categories = page.categories %}
+{% endif %}
+<ul>
+  {% if categories.size > 0%}<li><strong>Posted In</strong>: {{categories | join: ', ' | capitalize }}</li>{%endif%}
+  <li><strong>Posted On</strong>: <time>{{ page.date | date: '%Y-%m-%d' }}</time></li>
+  <li><strong>Posted By</strong>: {% if page.author %}{{ page.author }}{%else%}@oncomouse{%endif%}</li>
+</ul>
+{% endunless %}
