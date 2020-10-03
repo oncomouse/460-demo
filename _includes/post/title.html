@@ -1,0 +1,8 @@
+{% if post %}
+{% assign title=post.title %}
+{% assign url=post.url %}
+{% else %}
+{% assign title=page.title %}
+{% assign url=page.url %}
+{% endif %}
+<h1>{% if include.short %}<a href="{{ url| absolute_url }}">{% endif %}{{ title }}{% if include.short %}</a>{% endif %}</h1>

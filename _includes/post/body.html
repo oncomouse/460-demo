@@ -1,0 +1,15 @@
+{% if post %}
+{% assign content=post.content %}
+{% assign url=post.url %}
+{% assign excerpt=post.excerpt %}
+{% else %}
+{% assign content=page.content %}
+{% assign url=page.url %}
+{% assign excerpt=page.excerpt %}
+{% endif %}
+{% if include.short %}
+{{ excerpt }}
+<p><a href="{{ url | absolute_url}}">Read More</a>.</p>
+{% else %}
+{{ content }}
+{% endif %}
