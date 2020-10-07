@@ -1,5 +1,30 @@
+<!--
+  All the class referenced in this file are defined in assets/css/style.scss
+-->
+<!--
+  We define our navigation menu and add the navigation class. This is in case
+  we have other <nav> tags elsewhere that we want to style differently.
+-->
 <nav class="navigation">
+  <!--
+    The list in our navigation tag has a class applied for the same reason we
+    added one to it's parent (the <nav> tag): we want to apply a style to just
+    this list, and no other.
+
+    We could use, in our CSS file, `.navigation ul`, to select this list, but
+    there are two problems with that approach:
+      1) if we changed our <ul> to an <ol>, we would have to rewrite our CSS
+      2) the more items in a CSS selector, the slower the browser will parse
+         it. While we are unlikely to see a slow-down with 2 items vs 1 item,
+         at 3 or 4 items, the loading time of the website can be effected. So,
+         it's always a good habit to just use classes for as many things as you
+         can.
+  -->
   <ul class="navigation_list">
+    <!--
+      We create a class for our list items, as well, and apply it to each of
+      them, so they have the same style.
+    -->
     <li class="navigation_list-item"><a href="/about/site.html">About This Site</a></li>
     <li class="navigation_list-item"><a href="/about/me.html">About Me</a></li>
     <li class="navigation_list-item"><a href="/about/work.html">About My Work</a></li>

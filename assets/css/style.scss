@@ -1,31 +1,52 @@
 ---
 ---
 
+// Import the site's original theme, so we can extend it:
 @import "{{ site.theme }}";
 
+// Define the style for our <ul> tag:
 .navigation_list {
-    list-style: none;
-    padding-left: 0;
+  // This turns off the list bullet:
+  list-style: none;
+  // This turns off the left spacing in front of each item:
+  padding-left: 0;
 }
 
+// Define the style for our <li> tags:
 .navigation_list-item {
-    display: inline-block;
-    margin-left: 5px;
+  // inline-block makes each item sit next to each other instead of on a new
+  // line:
+  display: inline-block;
+  // Add some spacing between each list item:
+  margin-left: 5px;
 }
 
+// This is a CSS pseudo-element. It only matches navigation_list-item when it
+// is the first element inside another element:
 .navigation_list-item:first-child {
-    margin-left: 0;
+  // Remove the left spacing from the first item, which doesn't need it:
+  margin-left: 0;
 }
 
+// Match the links inside our list items:
 .navigation_list-item a {
-    background: #0F79D0;
-    padding: 10px;
-    color: white;
-    font-weight: bold;
-    border-radius: 15px;
+  // Set the background color:
+  background: #0f79d0;
+  // Add some space between the link text and the edge of the link:
+  padding: 10px;
+  // Set the text color to white:
+  color: white; // Could also set to #ffffff
+  // Set the font to bold:
+  font-weight: bold;
+  // Add some curve to the corners:
+  border-radius: 15px;
 }
 
+// Another pseudo-element; this one matches links that have the mouse
+// hovering over them:
 .navigation_list-item a:hover {
-    background: orange;
-    text-decoration: none;
+  // Turn the background orange:
+  background: orange;
+  // Turn the underline off, for hovering:
+  text-decoration: none;
 }
