@@ -11,20 +11,59 @@
 </head>
 
 <body>
+  <!--
+    This is the main site container, also the container for multicolumn
+    layout
+  -->
   <div class="container-lg px-3 my-5 markdown-body">
+    <!--
+      Add the site or page title as a h1; this will automatically be 100%
+      wide so we don't have to use a column, though we could.
+    -->
     {% if site.title and site.title != page.title %}
     <h1><a href="{{ "/" | absolute_url }}">{{ site.title }}</a></h1>
     {% endif %}
+    <!--
+      Start a row of columns, which in the Primer theme's CSS is called
+      "columns"
+    -->
     <div class="columns">
+      <!--
+        This next div is our sidebar. It is a column that will be 3 "units" (of
+        12) wide. We are also adding 5 "units" of margin at the top (mt-5).
+      -->
       <div class="column col-3 mt-5">
+        <!--
+          This special tag includes the file `_includes/navigation.html` here.
+          This lets us store our navigation menu in a separate file.
+        -->
         {% include navigation.html %}
       </div>
+      <!--
+        This is our main content div. It is a column that will be 9 "units"
+        wide. Our row is now full (as 3+9 = 12).
+      -->
       <div class="column col-9">
+        <!--
+          This is a special tag that tells Jekyll to place the content of the
+          page here.
+        -->
         {{ content }}
       </div>
     </div>
+    <!--
+      If we wanted to add another row, we could do it here. It might look like this:
 
+      <div class="columns">
+        <div class="column col-4"></div>
+        <div class="column col-4"></div>
+        <div class="column col-4"></div>
+      </div>
 
+      This would make a row of three equal width columns (4 * 3 = 12). We could
+      use this to make a more orderly menu or provide some additional
+      information to our readers.
+    -->
 
     {% if site.github.private != true and site.github.license %}
     <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
