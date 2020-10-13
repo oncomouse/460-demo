@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<div class="tracery">
+  <h1 class="tracery_output"></h1>
+  <button class="tracery_generate">Generate Again</button>
+</div>
+<script type="application/json" id="grammar">
+{{ content }}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/cash-dom@8.0.0/dist/cash.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/oncomouse/tracery@1.0.1/tracery.min.js"></script>
+<script>
+  $(function() {
+    function generateTracery(grammar) {
+      return function() {
+        $('.tracery_output').text(grammar.flatten('#origin#'))
+      }
+    }
+    var grammar = tracery.createGrammar(JSON.parse($('#grammar').text()));
+    generateTracery(grammar)();
+    $('.tracery_generate').on('click', generateTracery(grammar));
+  })
+</script>
