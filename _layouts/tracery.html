@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="tracery">
-  <h1 class="tracery_output"></h1>
+  <p class="tracery_output"></p>
   <button class="tracery_generate">Generate Again</button>
 </div>
 <script type="application/json" id="grammar">
@@ -14,7 +14,7 @@ layout: default
   $(function() {
     function generateTracery(grammar) {
       return function() {
-        $('.tracery_output').text(grammar.flatten('#origin#'))
+        $('.tracery_output').html(grammar.flatten('#origin#'))
       }
     }
     var grammar = tracery.createGrammar(JSON.parse($('#grammar').text()));
