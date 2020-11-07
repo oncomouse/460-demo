@@ -1,3 +1,33 @@
 ---
 ---
 @import "{{ site.theme }}";
+html {
+    font-family: 'Merriweather', serif;
+}
+
+/*
+I have to add one more rule because this Jekyll theme sets its fonts
+incorrectly (or at least not using best practices):
+*/
+body,
+.markdown-body {
+    font-family: inherit;
+}
+
+/*
+You may not need to do that, but if you're font doesn't change, you may need
+to.
+*/
+
+/*
+You could also load other webfonts and attach them just to headers if you wanted:
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Roboto Slab";
+    font-weight: 600; // Need this if we use one of the non-standard weights (which are 400 and 700)
+}
+*/
